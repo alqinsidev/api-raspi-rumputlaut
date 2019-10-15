@@ -1,0 +1,19 @@
+{
+  "name": "api-raspi-rumputlaut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alqinsidev/api-raspi-rumputlaut.git"
+  },
+  "author": "Padlan Alqinsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alqinsidev/api-raspi-rumputlaut/issues"
+  },
+  "homepage": "https://github.com/alqinsidev/api-raspi-rumputlaut#readme"
+}
