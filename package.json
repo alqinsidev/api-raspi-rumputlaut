@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/alqinsidev/api-raspi-rumputlaut/issues"
   },
-  "homepage": "https://github.com/alqinsidev/api-raspi-rumputlaut#readme"
+  "homepage": "https://github.com/alqinsidev/api-raspi-rumputlaut#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "delay": "^4.3.0",
+    "modem": "^1.0.3",
+    "moment": "^2.24.0",
+    "serialport": "^7.1.5",
+    "serialport-gsm": "^3.2.0"
+  }
 }
