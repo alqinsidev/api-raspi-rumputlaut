@@ -25,5 +25,12 @@ modem.open('/dev/ttyS0', options,()=>{
 modem.on('open', data => {
     modem.initializeModem(()=>{
       console.log("modem terbuka");
+      gsmModem.executeCommand('AT+CPIN?', (result, err) => {
+            if (err) {
+              console.log(`Error - ${err}`);
+            } else {
+              console.log(`Result ${JSON.stringify(result)}`);
+            }
+          });
     })
 })
