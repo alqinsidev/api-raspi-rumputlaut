@@ -24,7 +24,7 @@ modem.open('/dev/ttyS0', options,()=>{
 });
 
 modem.on('open', data => {
-  modem.executeCommand('AT^CPIN?', (result, err) => {
+  modem.executeCommand('AT', (result, err) => {
         if (err) {
           console.log(`Error - ${err}`);
         } else {
