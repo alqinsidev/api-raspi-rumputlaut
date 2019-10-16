@@ -1,20 +1,16 @@
-'use strict';
+var modem = require('simcom').modem('/dev/ttyS0');
 
-// require lib
-const Port = require('serial-at');
+modem.on('open', function() {
+  // do something with the modem
+  modem.execute('AT').then(function(lines) {
+  console.log('AT Response', lines);
+}, function(error) {
+  console.error('AT Command Error', error);
+});
+});
 
-(async function main() {
-    // create serial connection
-    const port = new Port('/dev/ttyS0');
+modem.error('error', function() {
 
-    const baudrate = new baudRate(9600);
+});
 
-    // open serial connection
-    await port.open();
-
-    // execute AT command and diaplay result
-    console.log(await port.at('AT'));
-
-    // close serial connection
-    await port.close();
-})();
+modem.open(); // open the port
