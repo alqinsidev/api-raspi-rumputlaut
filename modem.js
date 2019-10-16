@@ -19,7 +19,7 @@ let options = {
 }
 let timeout = 2000;
 
-modem.open('/dev/ttyS0', options,()=>{
+modem.open('/dev/ttyUSB0', options,()=>{
   console.log("opening modem port");
 });
 
