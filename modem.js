@@ -7,6 +7,8 @@ const Port = require('serial-at');
     // create serial connection
     const port = new Port('/dev/ttyS0');
 
+    const baudrate = new baudRate(9600);
+
     // open serial connection
     await port.open();
 
