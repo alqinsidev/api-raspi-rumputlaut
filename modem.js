@@ -17,20 +17,18 @@ let options = {
     customInitCommand: '',
     logger: console
 }
+let timeout = 2000;
 
 modem.open('/dev/ttyS0', options,()=>{
   console.log("opening modem port");
 });
 
 modem.on('open', data => {
-    modem.initializeModem(()=>{
-      console.log("modem terbuka");
-      gsmModem.executeCommand('AT+CPIN?', (result, err) => {
-            if (err) {
-              console.log(`Error - ${err}`);
-            } else {
-              console.log(`Result ${JSON.stringify(result)}`);
-            }
-          });
-    })
+  modem.executeCommand('AT+CPIN?', (result, err) => {
+        if (err) {
+          console.log(`Error - ${err}`);
+        } else {
+          console.log(`Result ${JSON.stringify(result)}`);
+        }
+      },true,timeout);
 })
