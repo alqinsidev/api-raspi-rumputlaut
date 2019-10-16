@@ -29,13 +29,14 @@ modem.on('open', data => {
       console.log(`Error Initializing Modem - ${err}`);
     } else {
       console.log(`InitModemResponse: ${JSON.stringify(msg)}`);
+      modem.executeCommand('AT', (result, err) => {
+            if (err) {
+              console.log(`Error - ${err}`);
+            } else {
+              console.log(`Result ${JSON.stringify(result)}`);
+            }
+          },true,timeout);
 
-  modem.executeCommand('AT', (result, err) => {
-        if (err) {
-          console.log(`Error - ${err}`);
-        } else {
-          console.log(`Result ${JSON.stringify(result)}`);
-        }
-      },true,timeout);
     }
+})
 })
