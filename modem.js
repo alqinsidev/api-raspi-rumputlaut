@@ -24,6 +24,12 @@ modem.open('/dev/ttyUSB0', options,()=>{
 });
 
 modem.on('open', data => {
+  gsmModem.initializeModem((msg, err) => {
+    if (err) {
+      console.log(`Error Initializing Modem - ${err}`);
+    } else {
+      console.log(`InitModemResponse: ${JSON.stringify(msg)}`);
+
   modem.executeCommand('AT', (result, err) => {
         if (err) {
           console.log(`Error - ${err}`);
@@ -31,4 +37,5 @@ modem.on('open', data => {
           console.log(`Result ${JSON.stringify(result)}`);
         }
       },true,timeout);
+    }
 })
